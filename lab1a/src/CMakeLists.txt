@@ -12,4 +12,4 @@ add_executable(lab1
         message.cpp
         message.h
         modes.cpp
-        modes.h)
+        modes.h test/doctest.h test/doctest_main.cpp test/tests.cpp)

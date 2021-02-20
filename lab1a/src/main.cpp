@@ -4,12 +4,16 @@
 #include "modes.h"
 #include <vector>
 
-using namespace std;
+namespace test {
+    int main_test(int argc, char* argv[]);
+}
 
 int MessageLog::count = 0;
 
-int main()
-{
+int main(int argc, char* argv[]) {
+
+    test::main_test(argc,argv);
+
     Functions function;
     MessageLog message;
 
