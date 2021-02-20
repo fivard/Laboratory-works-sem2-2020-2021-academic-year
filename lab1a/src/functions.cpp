@@ -16,7 +16,7 @@ void Functions::defineId() {
         MessageLog::count = 0;
         return;
     }
-    while(file >> mess.id >> mess.countWords && true){
+    while(file >> mess.id >> mess.countWords){
         mess.text = "";
         string s;
         MessageLog::count = max(MessageLog::count, mess.id+1);
@@ -254,21 +254,25 @@ void Functions::searchingBetweenTime(FullTime timeBefore, FullTime timeAfter) {
         }
     }
 }
-void Functions::searchingTypeAndLoading(string neededType, double neededLoading) {
+MessageLog Functions::searchingTypeAndLoading(string neededType, double neededLoading) {
     Functions funct;
     funct.readingFromTxt();
     for (auto i : funct.log){
-        if (i.typeOfError == neededType && i.loading >= neededLoading)
-            i.coutElem();
+        if (i.typeOfError == neededType && i.loading >= neededLoading) {
+            return i;
+        }
     }
+    return funct.log[0];
 }
-void Functions::searchingSubString(string subStr) {
+MessageLog Functions::searchingSubString(string subStr) {
     Functions funct;
     funct.readingFromTxt();
     for (auto i : funct.log){
-        if (subString(i.text, subStr))
-            i.coutElem();
+        if (subString(i.text, subStr)) {
+            return i;
+        }
     }
+    return funct.log[0];
 }
 void Functions::benchSearchingWithSubstr(string subStr) {
     for (auto i : log){

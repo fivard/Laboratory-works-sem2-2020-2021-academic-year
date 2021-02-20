@@ -114,12 +114,12 @@ bool interactive(Functions functions){
                 cout << "Choose a loading of message\n";
                 double neededLoading;
                 cin >> neededLoading;
-                Functions::searchingTypeAndLoading(neededType, neededLoading);
+                Functions::searchingTypeAndLoading(neededType, neededLoading).coutElem();
                 break;
             case 11:
                 cout << "Enter substring which is start of the message\n";
                 cin >> subStr;
-                Functions::searchingSubString(subStr);
+                Functions::searchingSubString(subStr).coutElem();
                 break;
             case 12:
                 functions.clearFiles();

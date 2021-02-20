@@ -46,8 +46,8 @@ class Functions{
 
         //Пошук за заданими критеріями (див. підваріанти a-c );
         static void searchingBetweenTime(FullTime, FullTime);
-        static void searchingTypeAndLoading(string, double);
-        static void searchingSubString(string);
+        static MessageLog searchingTypeAndLoading(string, double);
+        static MessageLog searchingSubString(string);
         void benchSearchingWithSubstr(string);
 
         //Видалення елементів (додаткові бали)
@@ -63,7 +63,7 @@ class Functions{
         void clearFiles();
 
         benchData forBenchmark(int);//generate N message, save to files,
-                            //reading from files and searching random element
+                                    //reading from files and searching random element
 };
 
 #endif //LABOR1_FUNCTIONS_H
