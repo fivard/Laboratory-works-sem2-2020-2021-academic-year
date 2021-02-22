@@ -3,10 +3,10 @@
 //
 
 #include <iostream>
-#include "../functions.h"
+#include "../MessageLog.h"
 #include "doctest.h"
 
-TEST_CASE("CHeck"){
+/*TEST_CASE("CHeck"){
     Functions functions;
     functions.clearFiles();
     Functions::defineId();
@@ -47,4 +47,4 @@ TEST_CASE("CHeck"){
     functions.readingFromTxt();
     CHECK(functions.log.empty());
 
-};
+};*/

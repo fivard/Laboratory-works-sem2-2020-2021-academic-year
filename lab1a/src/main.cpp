@@ -1,25 +1,8 @@
 #include <iostream>
-#include "message.h"
-#include "functions.h"
 #include "modes.h"
-#include <vector>
 
-namespace test {
-    int main_test(int argc, char* argv[]);
-}
 
-int MessageLog::count = 0;
-
-int main(int argc, char* argv[]) {
-
-    test::main_test(argc,argv);
-
-    Functions function;
-    MessageLog message;
-
-    function.log.clear();
-
-    Functions::defineId();
+int main() {
 
     bool check = true;
 
@@ -32,7 +15,7 @@ int main(int argc, char* argv[]) {
         short action;
         cin >> action;
         switch (action){
-            case 1: check = interactive(function);
+            case 1: check = interactive();
                     break;
             case 2: check = demonstration();
                     break;

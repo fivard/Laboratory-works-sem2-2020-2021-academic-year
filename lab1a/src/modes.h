@@ -5,12 +5,9 @@
 #ifndef LABOR1_MODES_H
 #define LABOR1_MODES_H
 
-#include <iostream>
-#include "functions.h"
+#include "MessageLog.h"
 
-using namespace std;
-
-bool interactive(Functions);
+bool interactive();
 
 bool demonstration();
 
