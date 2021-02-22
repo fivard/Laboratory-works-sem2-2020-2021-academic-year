@@ -46,6 +46,23 @@ class Message{
     bool savedInFiles;
 
 public:
+    int getId(){
+        return id;
+    }
+    int getCountWords(){
+        return countWords;
+    }
+    string getText(){
+        return text;
+    }
+
+    void setTypeOfError(string type){
+        typeOfError = type;
+    }
+    void setLoading(double _loading){
+        loading = _loading;
+    }
+
     int toCountWords(const string& s);
     void outElem();
 
@@ -68,7 +85,15 @@ class MessageLog{
 
 public:
     explicit MessageLog(const string& fileName);
+    //Геттери
+    Message& get(int id){
+        return log[id];
+    }
+    int get(){
+        return currentFreeId;
+    }
 
+    //Додаткові
     void defineId();
     bool emptyVector();
     void clearVector();

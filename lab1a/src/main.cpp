@@ -1,8 +1,13 @@
 #include <iostream>
 #include "modes.h"
 
+namespace test {
+    int main_test(int argc, char* argv[]);
+}
 
-int main() {
+int main(int argc, char* argv[]) {
+
+    test::main_test(argc,argv);
 
     bool check = true;
 

@@ -2,49 +2,40 @@
 // Created by Acer on 20.02.2021.
 //
 
-#include <iostream>
 #include "../MessageLog.h"
 #include "doctest.h"
 
-/*TEST_CASE("CHeck"){
-    Functions functions;
-    functions.clearFiles();
-    Functions::defineId();
-    CHECK(MessageLog::count == 0);
+TEST_CASE("Check"){
+    MessageLog log("test");
 
-    functions.createNewElemAndAddToVector("hi");
-    SUBCASE("createNewElement"){
-            CHECK(functions.log[0].id == 0);
-            CHECK(functions.log[0].countWords == 1);
-            CHECK(functions.log[0].count == 1);
-    };
+    CHECK(log.get() == 0);
 
-    functions.saveToFile();
-    functions.log.clear();
-    functions.readingFromTxt();
-    SUBCASE("saving and reading from file"){
-                CHECK(functions.log[0].id == 0);
-                CHECK(functions.log[0].countWords == 1);
-                CHECK(functions.log[0].count == 1);
-    };
+    log.createNewElemAndAddToVector("hi");
 
-    functions.log[0].typeOfError = "error";
-    functions.log[0].loading = 0.15;
-    functions.clearFiles();
-    functions.saveToFile();
-    SUBCASE("searching"){
-        CHECK(functions.log[0].id == functions.searchingTypeAndLoading("error", 0.1).id);
-        CHECK(functions.log[0].id == functions.searchingSubString("h").id);
-    }
+    CHECK(log.get(0).getId() == 0);
+    CHECK(log.get(0).getCountWords() == 1);
+    CHECK(log.get() == 1);
 
-    functions.updateOneMessage(0, "hello");
-    SUBCASE("updating"){
-        CHECK(functions.log[0].text == "hello");
-    }
+    log.saveToFile();
+    log.clearVector();
+    log.readFromTxt();
+    CHECK(log.get(0).getId() == 0);
+    CHECK(log.get(0).getCountWords() == 1);
+    CHECK(log.get() == 1);
 
-    functions.deleteOneMessage(0);
-    functions.log.clear();
-    functions.readingFromTxt();
-    CHECK(functions.log.empty());
+    log.get(0).setTypeOfError("error");
+    log.get(0).setLoading(0.15);
+    log.clearFiles();
+    log.saveToFile();
 
-};*/
+    CHECK(log.get(0).getId() == log.searchTypeAndLoading("error", 0.1)[0].getId());
+    CHECK(log.get(0).getId() == log.searchSubString("h")[0].getId());
+
+    log.updateOneMessage(0, "hello");
+
+    CHECK(log.get(0).getText() == "hello");
+    log.deleteOneMessage(0);
+    log.clearVector();
+    log.readFromTxt();
+    CHECK(log.emptyVector());
+};
