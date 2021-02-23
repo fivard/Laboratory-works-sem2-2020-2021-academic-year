@@ -133,23 +133,15 @@ void MessageLog::readFromBin(bool inTemp){
 //Создание
 void MessageLog::createNewElemAndAddToVector(const string& message) {
     Message mess;
-
     mess.id = currentFreeId;
     currentFreeId++;
-
     mess.text = message;
     mess.countWords = mess.toCountWords(mess.text);
-
     mess.timeCreated.setCurrentTime();
-
     mess.typeOfError = arrOfErrors[rand() % 5];
-
     mess.priority = rand() % 200;
-
     mess.loading = (double)rand() / RAND_MAX;
-
     mess.savedInFiles = false;
-
     log.push_back(mess);
 }
 //Сохранение
@@ -320,9 +312,9 @@ void MessageLog::generateMessagesToFile(int n) {
     temp.clear();
 }
 
-bool MessageLog::subString(string main, string substring){
-    for (int i = 0; i < substring.size(); i++)
-        if (main[i] != substring[i])
+bool MessageLog::subString(string main, string subString){
+    for (int i = 0; i < subString.size(); i++)
+        if (main[i] != subString[i])
             return false;
     return true;
 }
