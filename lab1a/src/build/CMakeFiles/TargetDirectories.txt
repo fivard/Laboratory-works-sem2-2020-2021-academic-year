@@ -1,0 +1,3 @@
+D:/University/Programming/Laboratory-works-sem2-2020-2021-academic-year/lab1a/src/build/CMakeFiles/lab1.dir
+D:/University/Programming/Laboratory-works-sem2-2020-2021-academic-year/lab1a/src/build/CMakeFiles/edit_cache.dir
+D:/University/Programming/Laboratory-works-sem2-2020-2021-academic-year/lab1a/src/build/CMakeFiles/rebuild_cache.dir

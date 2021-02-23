@@ -3,10 +3,6 @@
 //
 
 #include "MessageLog.h"
-#include <fstream>
-#include <iostream>
-
-using namespace std;
 
 MessageLog::MessageLog(const string& newFileName) {
     fileName = newFileName;
