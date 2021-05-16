@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.17)
-project(lab3a)
+project(lab)
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(TOP_DIR ${CMAKE_SOURCE_DIR})
 set(SRC_DIR ${TOP_DIR}/src)
+set(TESTS_DIR ${TOP_DIR}/tests)
+set(BENCHMARK_DIR ${TOP_DIR}/benchmark)
 
 set(LIB_NAME matrix)
 
@@ -23,9 +25,15 @@ target_include_directories (${LIB_NAME}
         $<INSTALL_INTERFACE:${LIB_NAME}>
         )
 
+option(ENABLE_TESTS "Build tests for project" ON)
+
+if (ENABLE_TESTS)
+    enable_testing()
+    add_subdirectory(${TESTS_DIR})
+endif()
 
 # executable for quick testing in main.cpp
 add_executable(main main.cpp)
 target_link_libraries(main PRIVATE ${LIB_NAME})
 
-add_executable(lab3a main.cpp src/Matrix.hxx src/Matrix.hpp)
+    add_executable(lab3a main.cpp src/Matrix.hxx src/Matrix.hpp)

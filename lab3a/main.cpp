@@ -7,7 +7,7 @@ int main() {
     Matrix<int> B{{1, 0},
                   {0, 1}};
 
-    auto C = detail::StrassenMultiplication(A, B, MatrixMultiplicationPolicy::StrassenParallel, SIZE_BOUND);
+    auto C = StrassenMultiplication(A, B, MatrixMultiplicationPolicy::StrassenParallel, SIZE_BOUND);
 
     C.print(std::cout);
 
